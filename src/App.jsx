@@ -1,21 +1,17 @@
 import { useState } from 'react'
-
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './pages/Home'
+import TestOutline from './pages/TestOutline'
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path='/dashboard' element={<Home />} />
+          <Route path='/test-outline' element={<TestOutline />} />
+        </Routes>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    </Router>
   )
 }
 
