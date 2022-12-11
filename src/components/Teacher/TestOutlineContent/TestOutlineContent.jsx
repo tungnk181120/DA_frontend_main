@@ -7,8 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(name, subject, time, action) {
-  return { name, subject, time, action };
+function createData(name, id, subject, time) {
+  return { name, id, subject, time };
 }
 
 const rows = [
@@ -26,9 +26,9 @@ function TestOutlineContent() {
         <TableHead>
           <TableRow>
             <TableCell>Tên khung đề</TableCell>
+            <TableCell align="right">Mã khung đề</TableCell>
             <TableCell align="right">Môn học</TableCell>
             <TableCell align="right">Thời gian</TableCell>
-            <TableCell align="right">Hành động</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -40,9 +40,9 @@ function TestOutlineContent() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
+              <TableCell align="right">{row.id}</TableCell>
               <TableCell align="right">{row.subject}</TableCell>
               <TableCell align="right">{row.time}</TableCell>
-              <TableCell align="right">{row.action}</TableCell>
             </TableRow>
           ))}
         </TableBody>
