@@ -6,6 +6,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
+
+import './TestOutlineContent.scss'
 
 function createData(name, id, subject, time) {
   return { name, id, subject, time };
@@ -21,33 +25,42 @@ const rows = [
 
 function TestOutlineContent() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Tên khung đề</TableCell>
-            <TableCell align="right">Mã khung đề</TableCell>
-            <TableCell align="right">Môn học</TableCell>
-            <TableCell align="right">Thời gian</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.id}</TableCell>
-              <TableCell align="right">{row.subject}</TableCell>
-              <TableCell align="right">{row.time}</TableCell>
+    <Typography component="div">
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 1100, border:2, borderColor:'#f6f6f6'}} >
+          <TableHead sx={{ bgcolor:'#f6f6f6',  }}>
+            <TableRow>
+              <TableCell sx={{ fontSize: 15, fontWeight:'bold'}}>Tên khung đề</TableCell>
+              <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Mã khung đề</TableCell>
+              <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Môn học</TableCell>
+              <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Thời gian</TableCell>
+              <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Hành động</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.name}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 }, }}
+              >
+                <TableCell component="th" scope="row" sx={{ fontSize: 15}}>
+                  {row.name}
+                </TableCell>
+                <TableCell sx={{ fontSize: 15}} align="center">{row.id}</TableCell>
+                <TableCell sx={{ fontSize: 15}} align="center">{row.subject}</TableCell>
+                <TableCell sx={{ fontSize: 15}} align="center">{row.time}</TableCell>
+                <TableCell sx={{ fontSize: 15}} align="center">
+                    <FaEdit />
+                    <span className='space'></span>
+                    <FaTrashAlt />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Typography>
+    
   );
 }
 
