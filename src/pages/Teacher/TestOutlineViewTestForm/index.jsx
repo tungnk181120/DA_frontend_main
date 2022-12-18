@@ -14,7 +14,7 @@ import Paper from '@mui/material/Paper';
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Sider from "../../../components/Sider/Sider";
 import TestOutlineTab from '../../../components/Teacher/TestOutlineTab/TestOutlineTab';
-import './TestOutlineBluePrint.scss'
+import './TestOutlineViewTestForm.scss'
 
 function createData(name, id, n_question, n_question_created) {
     return { name, id, n_question, n_question_created };
@@ -27,7 +27,7 @@ const rows = [
     createData('Gingerbread', 356, 16.0, 49),
 ];
 
-function TestOutlineBluePrint() {
+function TestOutlineViewTestForm() {
     const [value, setValue] = React.useState('two');
 
     const handleChange = (event, newValue) => {
@@ -37,38 +37,15 @@ function TestOutlineBluePrint() {
         <div className="test-outline-detail">
             <Sider></Sider>
             <div className="test-outline-detail-content">
-                {/* <div className="test-outline-detail-header">
-                    <span className="title-test-outline">Khung đề thi cấu liệu</span>
-                    <Button variant="contained" color="success" className="btn-create-test-outline" 
-                        component={RouterLink} to="/test-outline/create"
-                        onClick={() => {
-                    }}>
-                        Sinh đề
-                    </Button>
-                </div> */}
-                {/* <Box sx={{ width: '100%',  }}>
-                    <Tabs
-                        value={value}
-                        onChange={handleChange}
-                        textColor="secondary"
-                        indicatorColor="secondary"
-                        aria-label="secondary tabs example"
-                    >
-                        <Tab sx={{ fontSize: 12, fontWeight:'bold'}} value="one" label="Thông tin chung" to="/test-outline/detail/:id" component={RouterLink}/>
-                        <Tab sx={{ fontSize: 12, fontWeight:'bold'}} value="two" label="Ma trận đề" to="/test-outline/detail/test-blueprint/:id" component={RouterLink}/>
-                        <Tab sx={{ fontSize: 12, fontWeight:'bold'}} value="three" label="Ngân hàng câu hỏi" to="/test-outline/detail/n_question/:id" component={RouterLink}/>
-                        <Tab sx={{ fontSize: 12, fontWeight:'bold'}} value="four" label="Ngân hàng đề thi" to="/test-outline/detail/test-form/:id" component={RouterLink}/>
-                    </Tabs>
-                </Box> */}
-                <TestOutlineTab tab_name={"two"}></TestOutlineTab>
+                <TestOutlineTab tab_name={"four"}></TestOutlineTab>
                 <div className="test-outline-detail-info">
                     <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 1100, border:2, borderColor:'#f6f6f6'}}>
                             <TableHead sx={{ bgcolor:'#f6f6f6',  }}>
                                 <TableRow>
-                                    <TableCell sx={{ fontSize: 15, fontWeight:'bold'}}>Tên chủ đề</TableCell>
-                                    <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Mã chủ đề</TableCell>
-                                    <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Số câu hỏi</TableCell>
+                                    <TableCell sx={{ fontSize: 15, fontWeight:'bold'}}>Tên đề</TableCell>
+                                    <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Mã đề</TableCell>
+                                    <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Mô tả</TableCell>
                                     <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Số câu hỏi đã tạo</TableCell>
                                     <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Hành động</TableCell>
                                 </TableRow>
@@ -100,7 +77,7 @@ function TestOutlineBluePrint() {
                         component={RouterLink} to="/test-outline/create"
                         onClick={() => {
                     }}>
-                        Thêm chủ đề
+                        Thêm đề
                 </Button>
             </div>            
         </div>
@@ -109,4 +86,4 @@ function TestOutlineBluePrint() {
 }
     
     
-export default TestOutlineBluePrint;
+export default TestOutlineViewTestForm;

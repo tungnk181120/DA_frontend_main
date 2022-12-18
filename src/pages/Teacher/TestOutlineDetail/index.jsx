@@ -18,7 +18,7 @@ function TestOutlineDetail() {
         <div className="test-outline-detail">
             <Sider></Sider>
             <div className="test-outline-detail-content">
-                <div className="test-outline-detail-header">
+                {/* <div className="test-outline-detail-header">
                     <span className="title-test-outline">Danh sách khung đề thi</span>
                     <Button variant="contained" color="success" className="btn-create-test-outline" 
                         component={RouterLink} to="/test-outline/create"
@@ -26,8 +26,8 @@ function TestOutlineDetail() {
                     }}>
                         Sinh đề
                     </Button>
-                </div>
-                <Box sx={{ width: '100%' }}>
+                </div> */}
+                {/* <Box sx={{ width: '100%' }}>
                     <Tabs
                         value={value}
                         onChange={handleChange}
@@ -40,7 +40,8 @@ function TestOutlineDetail() {
                         <Tab value="three" label="Ngân hàng câu hỏi" to="/test-outline/detail/question/:id" component={RouterLink}/>
                         <Tab value="four" label="Ngân hàng đề thi" to="/test-outline/detail/test-form/:id" component={RouterLink}/>
                     </Tabs>
-                </Box>
+                </Box> */}
+                <TestOutlineTab tab_name={"one"}></TestOutlineTab>
                 <div className="test-outline-detail-info">
                     <h2 className='test-outline-detail-info-header'>Thông tin chung</h2>
                     <div className="detail-element">

@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
-
+import { Link as RouterLink, MemoryRouter } from 'react-router-dom';
 import './TestOutlineContent.scss'
 
 function createData(name, id, subject, time) {
@@ -30,7 +30,9 @@ function TestOutlineContent() {
         <Table sx={{ minWidth: 1100, border:2, borderColor:'#f6f6f6'}} >
           <TableHead sx={{ bgcolor:'#f6f6f6',  }}>
             <TableRow>
-              <TableCell sx={{ fontSize: 15, fontWeight:'bold'}}>Tên khung đề</TableCell>
+              <TableCell sx={{ fontSize: 15, fontWeight:'bold'}}>
+                Tên khung đề
+              </TableCell>
               <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Mã khung đề</TableCell>
               <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Môn học</TableCell>
               <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Thời gian</TableCell>
@@ -43,16 +45,19 @@ function TestOutlineContent() {
                 key={row.name}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 }, }}
               >
-                <TableCell component="th" scope="row" sx={{ fontSize: 15}}>
-                  {row.name}
-                </TableCell>
+                <RouterLink to='/test-outline/detail/:id'>
+                  <TableCell component="th" scope="row" sx={{ fontSize: 15, color:'blue'}}>
+                    {row.name}
+                  </TableCell>
+                </RouterLink>
+                
                 <TableCell sx={{ fontSize: 15}} align="center">{row.id}</TableCell>
                 <TableCell sx={{ fontSize: 15}} align="center">{row.subject}</TableCell>
                 <TableCell sx={{ fontSize: 15}} align="center">{row.time}</TableCell>
                 <TableCell sx={{ fontSize: 15}} align="center">
-                    <FaEdit />
+                    <span className="icon"><FaEdit /></span>
                     <span className='space'></span>
-                    <FaTrashAlt />
+                    <span className="icon"><FaTrashAlt /></span>
                 </TableCell>
               </TableRow>
             ))}

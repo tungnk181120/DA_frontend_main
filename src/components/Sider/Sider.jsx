@@ -7,7 +7,7 @@ import { FaHome, FaOutdent, FaSolarPanel, FaWpforms, FaQuestionCircle,
 
 import './Sider.scss';
 
-function Sider(){
+function Sider(props){
     const { collapseSidebar } = useProSidebar();
     // const [active, setState] = React.useState(false);
 
