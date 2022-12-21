@@ -1,25 +1,25 @@
 import Sider from "../../../components/Sider/Sider";
-import TestOutlineContent from "../../../components/Teacher/TestOutlineContent/TestOutlineContent";
+import QuestionList from "../../../components/Teacher/QuestionList/QuestionList";
 import Button from '@mui/material/Button';
 import { Link, MemoryRouter } from 'react-router-dom';
-import './TestOutline.scss'
+import './Question.scss'
 
-function TestOutline() {
+function Question() {
     return (
         <div className="test-outline">
-            <Sider test_outline='true'></Sider>
+            <Sider questions='true'></Sider>
             <div className="test-outline-content">
                 <div>
-                    <span className="title-test-outline">Danh sách khung đề thi</span>
+                    <span className="title-test-outline">Danh sách câu hỏi</span>
                     <Button variant="contained" color="success" className="btn-create-test-outline" 
                         component={Link} to="/test-outline/create"
                         onClick={() => {
                     }}>
-                        Tạo khung đề thi
+                        Tạo câu hỏi
                     </Button>
                 </div>
                 <div className="test-outline-content-table">
-                    <TestOutlineContent></TestOutlineContent>
+                    <QuestionList></QuestionList>
                 </div>             
                 
             </div>
@@ -28,4 +28,4 @@ function TestOutline() {
     )
 }
 
-export default TestOutline;
+export default Question;

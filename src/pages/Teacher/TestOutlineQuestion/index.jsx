@@ -14,6 +14,8 @@ import Paper from '@mui/material/Paper';
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Sider from "../../../components/Sider/Sider";
 import TestOutlineTab from '../../../components/Teacher/TestOutlineTab/TestOutlineTab';
+import QuestionList from '../../../components/Teacher/QuestionList/QuestionList';
+
 import './TestOutlineQuestion.scss'
 
 function createData(name, id, n_question, n_question_created) {
@@ -35,11 +37,11 @@ function TestOutlineQuestion() {
     };
     return (
         <div className="test-outline-detail">
-            <Sider></Sider>
+            <Sider test_outline='true'></Sider>
             <div className="test-outline-detail-content">
                 <TestOutlineTab tab_name={"three"}></TestOutlineTab>
                 <div className="test-outline-detail-info">
-                    <TableContainer component={Paper}>
+                    {/* <TableContainer component={Paper}>
                         <Table sx={{ minWidth: 1100, border:2, borderColor:'#f6f6f6'}}>
                             <TableHead sx={{ bgcolor:'#f6f6f6',  }}>
                                 <TableRow>
@@ -71,14 +73,9 @@ function TestOutlineQuestion() {
                             ))}
                             </TableBody>
                         </Table>
-                    </TableContainer>
+                    </TableContainer> */}
+                    <QuestionList></QuestionList>
                 </div>
-                <Button variant="contained" color="success" className="btn-create-test-outline" 
-                        component={RouterLink} to="/test-outline/create"
-                        onClick={() => {
-                    }}>
-                        Thêm chủ đề
-                </Button>
             </div>            
         </div>
         

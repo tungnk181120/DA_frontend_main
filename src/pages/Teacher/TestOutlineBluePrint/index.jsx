@@ -35,7 +35,7 @@ function TestOutlineBluePrint() {
     };
     return (
         <div className="test-outline-detail">
-            <Sider></Sider>
+            <Sider test_outline='true'></Sider>
             <div className="test-outline-detail-content">
                 {/* <div className="test-outline-detail-header">
                     <span className="title-test-outline">Khung đề thi cấu liệu</span>

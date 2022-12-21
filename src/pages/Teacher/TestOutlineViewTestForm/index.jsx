@@ -16,15 +16,15 @@ import Sider from "../../../components/Sider/Sider";
 import TestOutlineTab from '../../../components/Teacher/TestOutlineTab/TestOutlineTab';
 import './TestOutlineViewTestForm.scss'
 
-function createData(name, id, n_question, n_question_created) {
-    return { name, id, n_question, n_question_created };
+function createData(name, id, description) {
+    return { name, id, description };
   }
 const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24),
-    createData('Ice cream sandwich', 237, 9.0, 37),
-    createData('Eclair', 262, 16.0, 24),
-    createData('Cupcake', 305, 3.7, 67),
-    createData('Gingerbread', 356, 16.0, 49),
+    createData('Frozen yoghurt', 159, 24),
+    createData('Ice cream sandwich', 237, 37),
+    createData('Eclair', 262, 24),
+    createData('Cupcake', 305, 67),
+    createData('Gingerbread', 356, 49),
 ];
 
 function TestOutlineViewTestForm() {
@@ -35,7 +35,7 @@ function TestOutlineViewTestForm() {
     };
     return (
         <div className="test-outline-detail">
-            <Sider></Sider>
+            <Sider test_outline='true'></Sider>
             <div className="test-outline-detail-content">
                 <TestOutlineTab tab_name={"four"}></TestOutlineTab>
                 <div className="test-outline-detail-info">
@@ -46,7 +46,6 @@ function TestOutlineViewTestForm() {
                                     <TableCell sx={{ fontSize: 15, fontWeight:'bold'}}>Tên đề</TableCell>
                                     <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Mã đề</TableCell>
                                     <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Mô tả</TableCell>
-                                    <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Số câu hỏi đã tạo</TableCell>
                                     <TableCell sx={{ fontSize: 15, fontWeight:'bold'}} align="center">Hành động</TableCell>
                                 </TableRow>
                             </TableHead>
@@ -60,8 +59,7 @@ function TestOutlineViewTestForm() {
                                     {row.name}
                                 </TableCell>
                                 <TableCell sx={{ fontSize: 15}} align="center">{row.id}</TableCell>
-                                <TableCell sx={{ fontSize: 15}} align="center">{row.n_question}</TableCell>
-                                <TableCell sx={{ fontSize: 15}} align="center">{row.n_question_created}</TableCell>
+                                <TableCell sx={{ fontSize: 15}} align="center">{row.description}</TableCell>
                                 <TableCell sx={{ fontSize: 15}} align="center">
                                     <span className="icon"><FaEdit /></span>
                                     <span className='space'></span>

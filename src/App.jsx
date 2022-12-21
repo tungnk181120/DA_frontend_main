@@ -9,6 +9,12 @@ import TestOutlineBluePrint from './pages/Teacher/TestOutlineBluePrint';
 import TestOutlineQuestion from './pages/Teacher/TestOutlineQuestion';
 import TestOutlineViewTestForm from './pages/Teacher/TestOutlineViewTestForm';
 import TestForm from './pages/Teacher/TestForm'
+import TestFormDetail from './pages/Teacher/TestFormDetail';
+import TestFormContent from './pages/Teacher/TestFormContent';
+import Question from './pages/Teacher/Question';
+import TakerManager from './pages/Teacher/TakerManager';
+import TakerManagerDetail from './pages/Teacher/TakerManagerDetail';
+
 function App() {
   return (
     <Router>
@@ -24,6 +30,11 @@ function App() {
           <Route path='/test-outline/detail/question/:id' element={<TestOutlineQuestion />} />
           <Route path='/test-outline/detail/test-form/:id' element={<TestOutlineViewTestForm />} />
           <Route path='/test-form' element={<TestForm />} />
+          <Route path='/test-form/detail/:id' element={<TestFormDetail />} />
+          <Route path='/test-form/detail/content/:id' element={<TestFormContent />} />
+          <Route path='/questions' element={<Question />} />
+          <Route path='/taker-manager' element={<TakerManager />} />
+          <Route path='/taker-manager/detail/:id' element={<TakerManagerDetail />} />
         </Routes>
       </div>
     </Router>

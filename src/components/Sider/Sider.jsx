@@ -33,14 +33,14 @@ function Sider(props){
                     <MenuItem disabled={true} icon={<FaKaggle />} routerLink={<Link to="/" />} rootStyles={{ top:0,}}>
                         Hệ thống thi trực tuyến
                     </MenuItem>
-                    <MenuItem active={false} icon={<FaHome />} routerLink={<Link to="/dashboard" />}>Trang chủ</MenuItem>
-                    <MenuItem active={false} icon={<FaSolarPanel />} routerLink={<Link to="/test-outline" />}>Quản lý khung đề thi</MenuItem>
-                    <MenuItem active={false} icon={<FaWpforms />} routerLink={<Link to="/test-form" />}>Quản lý đề thi</MenuItem>
-                    <MenuItem active={false} icon={<FaQuestionCircle />} routerLink={<Link to="/questions" />}>Quản lý câu hỏi</MenuItem>
-                    <MenuItem active={false} icon={<FaChild />} routerLink={<Link to="/classes" />}>Quản lý lớp học</MenuItem>
-                    <MenuItem active={false} icon={<FaRegCalendarTimes />} routerLink={<Link to="/taker-manager" />}>Quản lý kíp thi</MenuItem>
-                    <MenuItem active={false} icon={<FaUserAlt />} routerLink={<Link to="/account" />}> Tài khoản</MenuItem>
-                    <MenuItem active={false} icon={<FaSignOutAlt />} routerLink={<Link to="/logout" />}> Đăng xuất </MenuItem>
+                    <MenuItem active={props.main} icon={<FaHome />} routerLink={<Link to="/dashboard" />}>Trang chủ</MenuItem>
+                    <MenuItem active={props.test_outline} icon={<FaSolarPanel />} routerLink={<Link to="/test-outline" />}>Quản lý khung đề thi</MenuItem>
+                    <MenuItem active={props.test_form} icon={<FaWpforms />} routerLink={<Link to="/test-form" />}>Quản lý đề thi</MenuItem>
+                    <MenuItem active={props.questions} icon={<FaQuestionCircle />} routerLink={<Link to="/questions" />}>Quản lý câu hỏi</MenuItem>
+                    <MenuItem active={props.class} icon={<FaChild />} routerLink={<Link to="/classes" />}>Quản lý lớp học</MenuItem>
+                    <MenuItem active={props.taker_manager} icon={<FaRegCalendarTimes />} routerLink={<Link to="/taker-manager" />}>Quản lý kíp thi</MenuItem>
+                    <MenuItem active={props.account} icon={<FaUserAlt />} routerLink={<Link to="/account" />}> Tài khoản</MenuItem>
+                    <MenuItem active={props.sign_out} icon={<FaSignOutAlt />} routerLink={<Link to="/logout" />}> Đăng xuất </MenuItem>
                 </Menu>
             </Sidebar>
             <main>

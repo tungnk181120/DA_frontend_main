@@ -2,15 +2,16 @@ import Sider from "../../../components/Sider/Sider";
 import TestOutlineContent from "../../../components/Teacher/TestOutlineContent/TestOutlineContent";
 import Button from '@mui/material/Button';
 import { Link, MemoryRouter } from 'react-router-dom';
-import './TestOutline.scss'
+import TakerManagerContent from "../../../components/Teacher/TakerManagerContent/TakerManagerContent";
+import './TakerManager.scss'
 
-function TestOutline() {
+function TakerManager() {
     return (
         <div className="test-outline">
-            <Sider test_outline='true'></Sider>
+            <Sider taker_manager='true'></Sider>
             <div className="test-outline-content">
                 <div>
-                    <span className="title-test-outline">Danh sách khung đề thi</span>
+                    <span className="title-test-outline">Danh sách kíp thi</span>
                     <Button variant="contained" color="success" className="btn-create-test-outline" 
                         component={Link} to="/test-outline/create"
                         onClick={() => {
@@ -19,7 +20,7 @@ function TestOutline() {
                     </Button>
                 </div>
                 <div className="test-outline-content-table">
-                    <TestOutlineContent></TestOutlineContent>
+                    <TakerManagerContent></TakerManagerContent>
                 </div>             
                 
             </div>
@@ -28,4 +29,4 @@ function TestOutline() {
     )
 }
 
-export default TestOutline;
+export default TakerManager;
