@@ -1,12 +1,15 @@
 .test-outline{
     display: flex;
     flex-direction: row;
+    background-color: rgb(244, 237, 228);
+    // filter: brightness(60%);
 }
 .test-outline-content{
     padding: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 .btn-create-test-outline{
     margin-left: 100;
@@ -19,3 +22,57 @@
     margin-top: 40px;
 }
 
+
+// form
+// .test-outline-form{
+//     position: fixed;
+//     top:0;
+//     right: 0;
+//     left: 0%;
+//     margin-top: 150px;
+//     padding: 20px;
+//     border-radius: 20px;
+//     background-color: rgb(240, 239, 239);
+//     filter: brightness(100%) !important; 
+// }
+// .submit-btn{
+//     cursor: pointer;
+//     background-color: #5c0aea;
+//     color: #5c0aea;
+// }
+// .test-outline-create-header{
+//     margin-left: 180px;
+// }
+// .test-outline-form-div{
+//     top: 10px;
+// }
+// .test-outline-form-div{
+//     display: flex;
+//     flex-direction: row;
+// }
+// input{
+//     display: block;
+//     box-sizing: border-box;
+//     width: 100%;
+//     border-radius: 4px;
+//     border: 2px solid rgb(23, 22, 22);
+//     padding: 10px 15px;
+//     margin-bottom: 10px;
+//     font-size: 14px;
+// }
+// form {
+//     max-width: 600px;
+//     margin: 0 auto;
+// }
+// input[type="submit"] {
+//     background: #ec5990;
+//     color: white;
+//     text-transform: uppercase;
+//     border: none;
+//     margin-top: 40px;
+//     padding: 10px;
+//     font-size: 10px;
+//     font-weight: 10;
+//     letter-spacing: 2px;
+//     width: 80px;
+// }

@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import './TestOutlineForm.scss'
-import Sider from "../../../components/Sider/Sider";
 
 function TestOutlineForm() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -15,11 +14,8 @@ function TestOutlineForm() {
     };
     console.log(errors);
     return (
-        <div className="test-outline-form-div">
-            <Sider></Sider>
-            <div className="test-outline-form-content">
                 <form onSubmit={handleSubmit(onSubmit)} className="test-outline-form">
-                    <h1>Tạo khung đề thi</h1>
+                    <h2 className="test-outline-create-header">Tạo khung đề thi</h2>
                     <label htmlFor="test_outline_name">Tên khung đề</label>
                     <input placeholder="Tên khung đề" {...register("test_outline_name")} />
 
@@ -41,10 +37,8 @@ function TestOutlineForm() {
                         {Object.keys(errors).length > 0 &&
                         "There are errors, check your console."}
                     </div>
-                    <input type="submit" />
+                    <input type="submit"  className="submit-btn"/>
                 </form>
-            </div>    
-        </div> 
     )
 }
 

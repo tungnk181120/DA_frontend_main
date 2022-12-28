@@ -12,7 +12,7 @@ function Question() {
                 <div>
                     <span className="title-test-outline">Danh sách câu hỏi</span>
                     <Button variant="contained" color="success" className="btn-create-test-outline" 
-                        component={Link} to="/test-outline/create"
+                        component={Link} to="/questions/create"
                         onClick={() => {
                     }}>
                         Tạo câu hỏi

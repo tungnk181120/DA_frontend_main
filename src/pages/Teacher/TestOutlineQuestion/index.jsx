@@ -74,6 +74,12 @@ function TestOutlineQuestion() {
                             </TableBody>
                         </Table>
                     </TableContainer> */}
+                    <Button variant="contained" color="success" className="btn-create-test-outline" 
+                        component={RouterLink} to="/question/create"
+                        onClick={() => {
+                    }}>
+                        Thêm câu hỏi
+                    </Button>
                     <QuestionList></QuestionList>
                 </div>
             </div>            

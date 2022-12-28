@@ -1,12 +1,12 @@
 import Sider from "../../../components/Sider/Sider";
-import TestOutlineContent from "../../../components/Teacher/TestOutlineContent/TestOutlineContent";
+import ClassContent from "../../../components/Teacher/ClassContent/ClassContent";
 // import TestOutlineForm from "../../../components/Teacher/TestOutlineForm/TestOutlineForm";\
 import { useForm } from "react-hook-form";
 import Button from '@mui/material/Button';
 import { Link, MemoryRouter } from 'react-router-dom';
-import './TestOutline.scss'
+import './Class.scss'
 
-function TestOutlineForm() {
+function ClassForm() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const onSubmit = (data) => {
@@ -47,22 +47,22 @@ function TestOutlineForm() {
     )
 }
 
-function TestOutline() {
+function Class() {
     return (
         <div className="test-outline">
-            <Sider test_outline='true'></Sider>
+            <Sider class='true'></Sider>
             <div className="test-outline-content">
                 <div>
-                    <span className="title-test-outline">Danh sách khung đề thi</span>
+                    <span className="title-test-outline">Danh sách lớp học</span>
                     <Button variant="contained" color="success" className="btn-create-test-outline" 
-                        component={Link} to="/test-outline/create"
+                        component={Link} to="/class/create"
                         onClick={() => {
                     }}>
-                        Tạo khung đề thi
+                        Tạo lớp học
                     </Button>
                 </div>
                 <div className="test-outline-content-table">
-                    <TestOutlineContent></TestOutlineContent>
+                    <ClassContent></ClassContent>
                 </div>             
                 
             </div>
@@ -71,4 +71,4 @@ function TestOutline() {
     )
 }
 
-export default TestOutline;
+export default Class;

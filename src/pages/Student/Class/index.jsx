@@ -1,32 +1,30 @@
 import Sider from "../../../components/Sider/Sider";
-import TestOutlineContent from "../../../components/Teacher/TestOutlineContent/TestOutlineContent";
+import ClassContent from "../../../components/Teacher/ClassContent/ClassContent";
 import Button from '@mui/material/Button';
 import { Link, MemoryRouter } from 'react-router-dom';
-import TakerManagerContent from "../../../components/Teacher/TakerManagerContent/TakerManagerContent";
-import './TakerManager.scss'
+import './Class.scss'
 
-function TakerManager() {
+function Class() {
     return (
         <div className="test-outline">
-            <Sider taker_manager='true'></Sider>
+            <Sider class='true'></Sider>
             <div className="test-outline-content">
                 <div>
-                    <span className="title-test-outline">Danh sách kíp thi</span>
+                    <span className="title-test-outline">Danh sách lớp học</span>
                     <Button variant="contained" color="success" className="btn-create-test-outline" 
-                        component={Link} to="/taker-manager/create"
+                        component={Link} to="/class/create"
                         onClick={() => {
                     }}>
-                        Tạo kíp thi
+                        Tạo lớp học
                     </Button>
                 </div>
                 <div className="test-outline-content-table">
-                    <TakerManagerContent></TakerManagerContent>
+                    <ClassContent></ClassContent>
                 </div>             
                 
             </div>
-            
         </div>        
     )
 }
 
-export default TakerManager;
+export default Class;
