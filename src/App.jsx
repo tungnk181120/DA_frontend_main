@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './pages/Home'
+import HomePage from './pages/HomePage'
+import LoginTeacher from './pages/Login/LoginTeacher';
+import LoginStudent from './pages/Login/LoginStudent';
+import SignupTeacher from './pages/Login/SignupTeacher';
+import SignupStudent from './pages/Login/SignupStudent';
+//Teacher
 import Dashboard  from './pages/Teacher/Dashboard';
 import TestOutline from './pages/Teacher/TestOutline'
 import TestOutlineCreate from './pages/Teacher/TestOutlineCreate';
@@ -20,12 +25,20 @@ import TakerManager from './pages/Teacher/TakerManager';
 import TakerManagerDetail from './pages/Teacher/TakerManagerDetail';
 import TakerManagerStudent from './pages/Teacher/TakerManagerStudent';
 import TakerManagerCreate from './pages/Teacher/TakerManagerCreate';
+// Student
+import StudentClass from './pages/Student/Class';
+import StudentAccount from './pages/Student/StudentAccount';
+import StudentTest from './pages/Student/Test';
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/teacher-login' element={<LoginTeacher />} />
+          <Route path='/student-login' element={<LoginStudent />} />
+          <Route path='/teacher-signup' element={<SignupTeacher />} />
+          <Route path='/student-signup' element={<SignupStudent />} />
           // Teacher
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/test-outline' element={<TestOutline />} />
@@ -48,8 +61,9 @@ function App() {
           <Route path='/taker-manager/create' element={<TakerManagerCreate />} />
           <Route path='/taker-manager/create' element={<TakerManagerCreate />} />
           //Student
-          <Route path='/lop-hoc' element={<Class />} />
-          <Route path='/bai-thi' element={<Class />} />
+          <Route path='/lop-hoc' element={<StudentClass />} />
+          <Route path='/bai-thi' element={<StudentTest />} />
+          <Route path='/tai-khoan' element={<StudentAccount />} />
         </Routes>
       </div>
     </Router>

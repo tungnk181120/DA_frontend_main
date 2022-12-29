@@ -1,13 +1,13 @@
-import Sider from "../../../components/Sider/Sider";
-import ClassContent from "../../../components/Teacher/ClassContent/ClassContent";
+import StudentSidebar from '../../../components/Student/StudentSidebar/StudentSidebar';
 import Button from '@mui/material/Button';
 import { Link, MemoryRouter } from 'react-router-dom';
+import StudentClassContent from '../../../components/Student/StudentClassContent/StudentClassContent';
 import './Class.scss'
 
-function Class() {
+function StudentClass() {
     return (
         <div className="test-outline">
-            <Sider class='true'></Sider>
+            <StudentSidebar lop_hoc='true'></StudentSidebar>
             <div className="test-outline-content">
                 <div>
                     <span className="title-test-outline">Danh sách lớp học</span>
@@ -15,11 +15,11 @@ function Class() {
                         component={Link} to="/class/create"
                         onClick={() => {
                     }}>
-                        Tạo lớp học
+                        Tham gia lớp học
                     </Button>
                 </div>
                 <div className="test-outline-content-table">
-                    <ClassContent></ClassContent>
+                    <StudentClassContent></StudentClassContent>
                 </div>             
                 
             </div>
@@ -27,4 +27,4 @@ function Class() {
     )
 }
 
-export default Class;
+export default StudentClass;

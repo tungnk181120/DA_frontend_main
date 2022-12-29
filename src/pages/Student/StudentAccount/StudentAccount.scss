@@ -1,0 +1,58 @@
+.student-account-content{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+.student-account-content-info{
+    width: 40%;
+    // max-width: 500px ;
+}
+.btn-remove-img{
+    cursor: pointer;
+}
+.student_img{
+    max-width: 150px;
+    max-height: 300px;
+}
+.student-avatar{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    width: 20%;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 300px;
+}
+
+.student-account{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(244, 237, 228);
+    // filter: brightness(60%);
+}
+.btn-create-student-account{
+    margin-left: 100;
+}
+.title-student-account{
+    margin-right: 400px;
+}
+.student-account-content-table{
+    margin-right: 40px;
+    margin-top: 40px;
+}
+
+.btn-submit-update-info{
+    padding: 5px;
+    background-color: rgb(42, 10, 247) !important; 
+    width: 200px !important;
+}
+.input{
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid rgb(23, 22, 22);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}

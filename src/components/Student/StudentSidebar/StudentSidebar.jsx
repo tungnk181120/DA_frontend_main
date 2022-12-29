@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import { FaHome, FaOutdent, FaSolarPanel, FaWpforms, FaQuestionCircle,
             FaChild, FaRegCalendarTimes, FaKaggle, FaUserAlt, FaSignOutAlt } from "react-icons/fa";
 
-import './Sider.scss';
+import './Sidebar.scss';
 
-function Sider(props){
+function StudentSidebar(props){
     const { collapseSidebar } = useProSidebar();
     // const [active, setState] = React.useState(false);
 
@@ -32,15 +32,15 @@ function Sider(props){
                     <MenuItem disabled={true} icon={<FaKaggle />} routerLink={<Link to="/" />} rootStyles={{ top:0,}}>
                         Hệ thống thi trực tuyến
                     </MenuItem>
-                    <MenuItem active={props.main} icon={<FaHome />} routerLink={<Link to="/dashboard" />}>Trang chủ</MenuItem>
-                    <MenuItem active={props.test_outline} icon={<FaSolarPanel />} routerLink={<Link to="/test-outline" />}>Quản lý khung đề thi</MenuItem>
-                    <MenuItem active={props.test_form} icon={<FaWpforms />} routerLink={<Link to="/test-form" />}>Quản lý đề thi</MenuItem>
-                    <MenuItem active={props.questions} icon={<FaQuestionCircle />} routerLink={<Link to="/questions" />}>Quản lý câu hỏi</MenuItem>
+                    {/* <MenuItem active={props.main} icon={<FaHome />} routerLink={<Link to="/trang-chu" />}>Trang chủ</MenuItem> */}
+                    <MenuItem active={props.lop_hoc} icon={<FaChild />} routerLink={<Link to="/lop-hoc" />}>Lớp học</MenuItem>
+                    <MenuItem active={props.bai_thi} icon={<FaWpforms />} routerLink={<Link to="/bai-thi" />}>Bài thi</MenuItem>
+                    {/* <MenuItem active={props.questions} icon={<FaQuestionCircle />} routerLink={<Link to="/questions" />}>Quản lý câu hỏi</MenuItem>
                     <MenuItem active={props.class} icon={<FaChild />} routerLink={<Link to="/classes" />}>Quản lý lớp học</MenuItem>
-                    <MenuItem active={props.taker_manager} icon={<FaRegCalendarTimes />} routerLink={<Link to="/taker-manager" />}>Quản lý kíp thi</MenuItem>
-                    <MenuItem active={props.account} icon={<FaUserAlt />} routerLink={<Link to="/account" />}> Tài khoản</MenuItem>
-                    <MenuItem active={props.sign_out} icon={<FaSignOutAlt />} routerLink={<Link to="/logout" />}> Đăng xuất </MenuItem>
-                    <div className="fill">
+                    <MenuItem active={props.taker_manager} icon={<FaRegCalendarTimes />} routerLink={<Link to="/taker-manager" />}>Quản lý kíp thi</MenuItem> */}
+                    <MenuItem active={props.tai_khoan} icon={<FaUserAlt />} routerLink={<Link to="/tai-khoan" />}> Tài khoản</MenuItem>
+                    <MenuItem active={props.dang_xuat} icon={<FaSignOutAlt />} routerLink={<Link to="/dang-xuat" />}> Đăng xuất </MenuItem>
+                    <div className="fill-student">
                         
                     </div>
                 </Menu>
@@ -55,4 +55,4 @@ function Sider(props){
 }
 
 
-export default Sider;
+export default StudentSidebar;
