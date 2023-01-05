@@ -38,7 +38,7 @@ function Sider(props){
                     <MenuItem active={props.questions} icon={<FaQuestionCircle />} routerLink={<Link to="/questions" />}>Quản lý câu hỏi</MenuItem>
                     <MenuItem active={props.class} icon={<FaChild />} routerLink={<Link to="/classes" />}>Quản lý lớp học</MenuItem>
                     <MenuItem active={props.taker_manager} icon={<FaRegCalendarTimes />} routerLink={<Link to="/taker-manager" />}>Quản lý kíp thi</MenuItem>
-                    <MenuItem active={props.account} icon={<FaUserAlt />} routerLink={<Link to="/account" />}> Tài khoản</MenuItem>
+                    <MenuItem active={props.account} icon={<FaUserAlt />} routerLink={<Link to="/account/:id" />}> Tài khoản</MenuItem>
                     <MenuItem active={props.sign_out} icon={<FaSignOutAlt />} routerLink={<Link to="/logout" />}> Đăng xuất </MenuItem>
                     <div className="fill">
                         

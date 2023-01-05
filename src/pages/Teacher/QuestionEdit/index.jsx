@@ -1,4 +1,3 @@
-import './QuestionCreate.scss'
 import Sider from "../../../components/Sider/Sider";
 import { Link as RouterLink, MemoryRouter } from 'react-router-dom';
 import { FaStepBackward } from "react-icons/fa";
@@ -19,7 +18,7 @@ import Input from "@material-ui/core/Input";
 //   <Select options={options} />
 // )
 
-function QuestionCreate() {
+function QuestionEdit() {
     const { register, control, handleSubmit, watch, formState: { errors } } = useForm();
     //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const onSubmit = (data) => {
@@ -41,31 +40,31 @@ function QuestionCreate() {
                             <FaStepBackward />
                         </span>  
                     </RouterLink>   
-                    <h2 className="test-outline-form-header">Tạo câu hỏi</h2>
+                    <h2 className="test-outline-form-header">Chỉnh sửa câu hỏi</h2>
                     <label htmlFor="question_content">Câu hỏi</label>
-                    <input placeholder="Nhập nội dung câu hỏi" {...register("question_content")} />
+                    <input placeholder="Nội dung câu hỏi" {...register("question_content")} />
 
                     <label htmlFor="question_answer_1">Đáp án 1</label>
                     <input 
-                        placeholder="Nhập đáp án"
+                        placeholder="Đáp án 1"
                         type="text"
                         {...register("question_answer_1")}
                     />
                     <label htmlFor="question_answer_2">Đáp án 2</label>
                     <input 
-                        placeholder="Nhập đáp án"
+                        placeholder="Đáp án 2"
                         type="text"
                         {...register("question_answer_2")}
                     />
                     <label htmlFor="question_answer_3">Đáp án 3</label>
                     <input 
-                        placeholder="Nhập đáp án"
+                        placeholder="Đáp án 3"
                         type="text"
                         {...register("question_answer_3")}
                     />
                     <label htmlFor="question_answer_4">Đáp án 4</label>
                     <input 
-                        placeholder="Nhập đáp án"
+                        placeholder="Đáp án 4"
                         type="text"
                         {...register("question_answer_4")}
                     />
@@ -77,10 +76,10 @@ function QuestionCreate() {
                         render={({ field }) => <Select 
                         {...field} 
                         options={[
-                            { value: '1', label: 'Đáp án 1' },
-                            { value: '2', label: 'Đáp án 2' },
-                            { value: '3', label: 'Đáp án 3' },
-                            { value: '4', label: 'Đáp án 4' }
+                            { value: '1', label: 'Đề số 1' },
+                            { value: '2', label: 'Đề số 2' },
+                            { value: '3', label: 'Đề số 3' },
+                            { value: '4', label: 'Đề số 4' }
                         ]} 
                         />}
                     />
@@ -99,4 +98,4 @@ function QuestionCreate() {
     )
 }
 
-export default QuestionCreate;
+export default QuestionEdit;

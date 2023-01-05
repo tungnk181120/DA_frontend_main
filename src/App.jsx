@@ -15,9 +15,11 @@ import TestOutlineQuestion from './pages/Teacher/TestOutlineQuestion';
 import TestOutlineViewTestForm from './pages/Teacher/TestOutlineViewTestForm';
 import TestForm from './pages/Teacher/TestForm'
 import TestFormDetail from './pages/Teacher/TestFormDetail';
+import TestFormCreate from './pages/Teacher/TestFormCreate';
 import TestFormContent from './pages/Teacher/TestFormContent';
 import Question from './pages/Teacher/Question';
 import QuestionCreate from './pages/Teacher/QuestionCreate';
+import QuestionEdit from './pages/Teacher/QuestionEdit';
 import Class from './pages/Teacher/Class';
 import ClassDetail from './pages/Teacher/ClassDetail';
 import ClassStudent from './pages/Teacher/ClassStudent';
@@ -25,6 +27,7 @@ import TakerManager from './pages/Teacher/TakerManager';
 import TakerManagerDetail from './pages/Teacher/TakerManagerDetail';
 import TakerManagerStudent from './pages/Teacher/TakerManagerStudent';
 import TakerManagerCreate from './pages/Teacher/TakerManagerCreate';
+import TeacherAccount from './pages/Teacher/TeacherAccount';
 // Student
 import StudentClass from './pages/Student/Class';
 import StudentAccount from './pages/Student/StudentAccount';
@@ -50,16 +53,18 @@ function App() {
           <Route path='/test-form' element={<TestForm />} />
           <Route path='/test-form/detail/:id' element={<TestFormDetail />} />
           <Route path='/test-form/detail/content/:id' element={<TestFormContent />} />
+          <Route path='/test-form/create' element={<TestFormCreate />} />
           <Route path='/questions' element={<Question />} />
           <Route path='/questions/create' element={<QuestionCreate />} />
+          <Route path='/questions/edit/:id' element={<QuestionEdit />} />
           <Route path='/classes' element={<Class />} />
           <Route path='/classes/detail/:id' element={<ClassDetail />} />
           <Route path='/classes/detail/students/:id' element={<ClassStudent />} />
           <Route path='/taker-manager' element={<TakerManager />} />
           <Route path='/taker-manager/detail/:id' element={<TakerManagerDetail />} />
           <Route path='/taker-manager/detail/student/:id' element={<TakerManagerStudent />} />
-          <Route path='/taker-manager/create' element={<TakerManagerCreate />} />
-          <Route path='/taker-manager/create' element={<TakerManagerCreate />} />
+          <Route path='/taker-manager/create' element={<TakerManagerCreate />} />      
+          <Route path='/account/:id' element={<TeacherAccount />} />       
           //Student
           <Route path='/lop-hoc' element={<StudentClass />} />
           <Route path='/bai-thi' element={<StudentTest />} />

@@ -17,17 +17,28 @@ function TestFormCreate() {
     console.log(errors);
     return (
         <div className="test-outline-form-div">
-            <Sider questions='true'></Sider>
+            <Sider test_form='true'></Sider>
             <div className="test-outline-form-content">
                 <form onSubmit={handleSubmit(onSubmit)} className="test-outline-form">
-                    <RouterLink to='/questions'>
+                    <RouterLink to='/test-form'>
                         <span className="back_icon" >
                             <FaStepBackward />
                         </span>  
                     </RouterLink>   
-                    <h2 className="test-outline-form-header">Tạo câu hỏi</h2>
-                    <label htmlFor="test_outline_name">Tạo câu hỏi</label>
-                    <input placeholder="Tên khung đề" {...register("test_outline_name")} />
+                    <h2 className="test-outline-form-header">Tạo đề thi</h2>
+                    <label htmlFor="test_form_name">Tạo đề thi</label>
+                    <input placeholder="Tên đề thi" {...register("test_form_name")} />
+
+                    <label htmlFor="test_outline">Khung đề</label>
+                    <input
+                        placeholder="Khung đề"
+                        type="text"
+                        {...register("test_outline")}
+                    />
+                    <div style={{ color: "red" }}>
+                        {Object.keys(errors).length > 0 &&
+                        "There are errors, check your console."}
+                    </div>
 
                     <label htmlFor="test_outline_time">Thời gian thi</label>
                     <input 
@@ -47,42 +58,7 @@ function TestFormCreate() {
                         {Object.keys(errors).length > 0 &&
                         "There are errors, check your console."}
                     </div>
-                    {/* <div className="test-outline-topic-div"> */}
-                        <label htmlFor="topic1">Chủ đề 1</label>
-                        <input
-                            placeholder="Chủ đề 1"
-                            type="text"
-                            {...register("topic1")}
-                        />
-                        <div style={{ color: "red" }}>
-                            {Object.keys(errors).length > 0 &&
-                            "There are errors, check your console."}
-                        </div>
 
-                        <label htmlFor="test_outline_time">Số câu hỏi chủ đề 1</label>
-                        <input 
-                            placeholder="60"
-                            type="number"
-                            {...register("test_outline_time")}
-                        />
-                    {/* </div> */}
-                    <label htmlFor="topic2">Chủ đề 2</label>
-                    <input
-                        placeholder="Chủ đề 1"
-                        type="text"
-                        {...register("topic2")}
-                    />
-                    <div style={{ color: "red" }}>
-                        {Object.keys(errors).length > 0 &&
-                        "There are errors, check your console."}
-                    </div>
-
-                    <label htmlFor="test_outline_time">Số câu hỏi chủ đề 2</label>
-                    <input 
-                        placeholder="60"
-                        type="number"
-                        {...register("test_outline_time")}
-                    />
 
                     <input type="submit" />
                 </form>

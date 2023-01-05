@@ -60,7 +60,9 @@ function QuestionList() {
                 <TableCell sx={{ fontSize: 15}} align="center">{row.test_outline}</TableCell>
                 <TableCell sx={{ fontSize: 15}} align="center">{row.topic}</TableCell>
                 <TableCell sx={{ fontSize: 15}} align="center">
-                    <span className="icon"><FaEdit /></span>
+                  <RouterLink to='/questions/edit/:id'>
+                  <span className="icon"><FaEdit /></span>
+                  </RouterLink>                    
                     <span className='space'></span>
                     <span className="icon"><FaTrashAlt /></span>
                 </TableCell>
