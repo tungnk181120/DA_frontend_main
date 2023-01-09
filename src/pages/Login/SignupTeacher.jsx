@@ -1,3 +1,5 @@
+import axios from 'redaxios';
+import { useForm } from "react-hook-form";
 import React, { useContext } from 'react';
 // import { NotificationManager} from 'react-notifications';
 import './Login.scss'
@@ -7,61 +9,51 @@ import './Login.scss'
 // import { useMutation } from '@apollo/client'
 // import { teacherRegister } from '../../graphql-client/queries';
 // import { Link, useHistory } from 'react-router-dom';
-
+const api = 'http://localhost:5000/api/teacher'
 function SignupTeacher(props) {
-	// const context = useContext(AuthContext);
-	// const history = useHistory();
-	
-	// const [errors,setErrors] = useState({});
-	// const [values, setValues]=useState({
-	// 	name:'',
-	// 	account:'',
-	// 	password:'',
-	// });
-	
-	// const onChange= (event) => {
-	// 	setValues({...values,[event.target.name]:event.target.value})
-	// }
-
-	// const [addUser, {loading}]= useMutation(teacherRegister,{
-		
-	// 	update(proxy,result){
-	// 		console.log(result);
-	// 		NotificationManager.success('Tạo tài khoản thành công' );
-	// 		history.push("/teacher-login");
-	// 	},
-	// 	onError(err){
-	// 		NotificationManager.error('Tài khoản đã tồn tại' );
-	// 	},
-	// 	variables:values
-	// })
-
-	// const onSubmit = (event) =>{
-	// 	event.preventDefault();
-	// 	console.log(values);
-	// 	addUser();
-		
-	// }	 
-	
+	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const onSubmit = (data) => {
+		axios.post(api +'/register', {
+			email: data.email,
+			name: data.name,
+			password: data.password,
+			phone: data.phone
+		  })
+		  .then(function (response) {
+			console.log(response)
+			if (response.message == "Login thành công"){
+				window.location.href = '/teacher-login'
+			}
+		  })
+		  .catch(function (error) {
+			console.log(error);
+		  });
+    };
     return (
     <>
     <section className="c1">
 	<div className="screen">
 		<div className="screen__content">
-			<form className="login" >
+			<form className="login" onSubmit={handleSubmit(onSubmit)}>
 				<div className="login__field">
 					<i className="login__icon fas fa-user"></i>
-					<input type="text" className="login__input" placeholder="Họ tên" name="name"
+					<input type="text" className="login__input" placeholder="Họ tên" name="name" {...register("name")}
 									/>
 				</div>
 				<div className="login__field">
 				<i className="login__icon fas fa-user"></i>
-					<input type="text" className="login__input" placeholder="Email" name="email"
+					<input type="text" className="login__input" placeholder="Email" name="email" {...register("email")}
+									/>
+				</div>
+				<div className="login__field">
+				<i className="login__icon fas fa-user"></i>
+					<input type="text" className="login__input" placeholder="Số điện thoại" name="phone" {...register("phone")}
 									/>
 				</div>
                 <div className="login__field">
 					<i className="login__icon fas fa-lock"></i>
-					<input type="password" className="login__input" placeholder="Mật khẩu" name="password"
+					<input type="password" className="login__input" placeholder="Mật khẩu" name="password" {...register("password")}
 									/>
 				</div>
 				<button className="button login__submit" type="submit">

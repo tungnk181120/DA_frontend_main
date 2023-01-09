@@ -3,16 +3,29 @@ import './TestOutlineCreate.scss'
 import Sider from "../../../components/Sider/Sider";
 import { Link as RouterLink, MemoryRouter } from 'react-router-dom';
 import { FaStepBackward } from "react-icons/fa";
+
+import axios from 'redaxios';
+const api = 'http://localhost:5000/api/teacher'
+
 function TestOutlineCreate() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const onSubmit = (data) => {
-        //await sleep(2000);
-        if (data.test_outline_name === "bill") {
-            alert(JSON.stringify(data));
-        } else {
-            console.log("Hi");
+		axios.post(api +'/register', {
+			email: data.email,
+			name: data.name,
+			password: data.password,
+			phone: data.phone
+		  })
+        .then(function (response) {
+        console.log(response)
+        if (response.message == "Login thành công"){
+            window.location.href = '/teacher-login'
         }
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
     };
     console.log(errors);
     return (
