@@ -59,11 +59,11 @@ function TestOutlineCreate() {
                             "There are errors, check your console."}
                         </div>
 
-                        <label htmlFor="test_outline_time">Số câu hỏi chủ đề 1</label>
+                        <label htmlFor="n_topic1">Số câu hỏi chủ đề 1</label>
                         <input 
                             placeholder="60"
                             type="number"
-                            {...register("test_outline_time")}
+                            {...register("n_topic1")}
                         />
                     {/* </div> */}
                     <label htmlFor="topic2">Chủ đề 2</label>
@@ -77,11 +77,11 @@ function TestOutlineCreate() {
                         "There are errors, check your console."}
                     </div>
 
-                    <label htmlFor="test_outline_time">Số câu hỏi chủ đề 2</label>
+                    <label htmlFor="n_topic2">Số câu hỏi chủ đề 2</label>
                     <input 
                         placeholder="60"
                         type="number"
-                        {...register("test_outline_time")}
+                        {...register("n_topic2")}
                     />
 
                     <input type="submit" />

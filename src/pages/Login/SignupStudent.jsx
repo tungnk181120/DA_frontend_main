@@ -58,7 +58,7 @@ function SignupStudent(props) {
 				</div>
 				<div className="login__field">
 				<i className="login__icon fas fa-user"></i>
-					<input type="text" className="login__input" placeholder="Tên đăng nhập" name="account"
+					<input type="text" className="login__input" placeholder="Email" name="email"
 									/>
 				</div>
                 <div className="login__field">

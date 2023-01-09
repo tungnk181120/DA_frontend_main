@@ -45,17 +45,19 @@ function LoginTeacher(props) {
 	// 	loginUser();
 		
 	// }
-	 
+	const login = (data) =>{
+		alert(data)
+	}
     return (
         <>
     
     <section className="c1">
 	<div className="screen">
 		<div className="screen__content">
-			<form className="login">
+			<form className="login" onSubmit={login}>
 				<div className="login__field">
 					<i className="login__icon fas fa-user"></i>
-					<input type="text" className="login__input" placeholder="Tên đăng nhập" name="account" />
+					<input type="text" className="login__input" placeholder="Email" name="email" />
 				</div>
 				<div className="login__field">
 					<i className="login__icon fas fa-lock"></i>
