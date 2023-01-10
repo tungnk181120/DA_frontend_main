@@ -1,15 +1,10 @@
 import { useForm } from "react-hook-form";
 import React, { useContext } from 'react';
 import axios from 'redaxios';
-import  { Navigate } from 'react-router-dom'
 import './Login.scss'
-// import { AuthContext } from '../../context/auth';
-// import { useState } from 'react';
-// import { teacherLogin } from '../../graphql-client/queries';
-// import { useMutation } from '@apollo/client'
-// import { Link, useHistory } from 'react-router-dom';
-
-// import { NotificationManager} from 'react-notifications';
+// import Cookies from 'universal-cookie';
+ 
+// const cookies = new Cookies();
 
 const api = 'http://localhost:5000/api/teacher'
 function LoginTeacher(props) {
@@ -23,6 +18,7 @@ function LoginTeacher(props) {
 		  .then(function (response) {
 			console.log(response)
 			if (response.data['message'] == "Login thành công"){
+				// cookies.set(token, response.data['token']);
 				window.location.href = '/test-outline'
 			}
 			else{

@@ -11,12 +11,21 @@ function TestOutlineCreate() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const onSubmit = (data) => {
-		axios.post(api +'/register', {
-			email: data.email,
-			name: data.name,
-			password: data.password,
-			phone: data.phone
-		  })
+		axios.post(api +'/test-outline', {
+            test_outline_name : data.test_outline_name,
+            test_outline_time : data.test_outline_time,
+            subject : data.subject,
+            topic1 : data.topic1,
+            n_topic1 : data.n_topic1,
+            topic2 : data.topic2,
+            n_topic2 : data.n_topic2,
+		  }, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          },
+            { withCredentials: true }
+        )
         .then(function (response) {
         console.log(response)
         if (response.message == "Login thành công"){

@@ -1,60 +1,45 @@
 import React, { useContext } from 'react';
 import './Login.scss'
-// import { NotificationManager} from 'react-notifications';
-// import { AuthContext } from '../../context/auth';
-// import { useState } from 'react';
-// import { studentLogin } from '../../graphql-client/queries';
-// import { useMutation } from '@apollo/client'
-// import { Link, useHistory } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import axios from 'redaxios';
 
+const api = 'http://localhost:5000/api/student'
 function LoginStudent(props) {
-	// const context = useContext(AuthContext);
-	// const history = useHistory();
-	// const [errors,setErrors] = useState({});
-	// const [values, setValues]=useState({
-	// 	account:'',
-	// 	password:'',
-	// });
-	
-	// const onChange= (event) => {
-	// 	setValues({...values,[event.target.name]:event.target.value})
-	// }
-
-	// const [loginUser, {loading}]= useMutation(studentLogin,{
-		
-	// 	update(_,{data:{studentLogin:userData}}){
-			
-			
-	// 		context.login(userData)
-	// 		history.push("/")
-	// 	},
-	// 	onError(err){
-	// 		NotificationManager.error('Sai thông tin đăng nhập' );
-	// 	},
-	// 	variables:values
-	// })
-
-	// const onSubmit = (event) =>{
-	// 	event.preventDefault();
-		
-	// 	loginUser();
-		
-	// }
-	 
+	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const onSubmit = (data) => {
+		axios.post(api +'/login', {
+			email: data.email,
+			password: data.password
+		  })
+		  .then(function (response) {
+			console.log(response)
+			if (response.data['message'] == "Login thành công"){
+				// cookies.set(token, response.data['token']);
+				window.location.href = '/lop-hoc'
+			}
+			else{
+				window.location.href = '/student-login'
+			}
+		  })
+		  .catch(function (error) {
+			console.log(error);
+		  });
+    };
     return (
         <>
     
     <section className="c1">
 	<div className="screen">
 		<div className="screen__content">
-			<form className="login" >
+			<form className="login" onSubmit={handleSubmit(onSubmit)}>
 				<div className="login__field">
 					<i className="login__icon fas fa-user"></i>
-					<input type="text" className="login__input" placeholder="Email" name="email" />
+					<input type="text" className="login__input" placeholder="Email" name="email" {...register("email")}/>
 				</div>
 				<div className="login__field">
 					<i className="login__icon fas fa-lock"></i>
-					<input type="password" className="login__input" placeholder="Mật khẩu"  name="password" />
+					<input type="password" className="login__input" placeholder="Mật khẩu"  name="password" {...register("password")}/>
 				</div>
 				<button type="submit" className="button login__submit">
 					<span  className="button__text">Đăng nhập</span>
@@ -62,7 +47,7 @@ function LoginStudent(props) {
 				</button>				
 			</form>
 			<div className="social-login">
-				<p>Bạn chưa có tài khoản học sinh ? <a href="teacher-signup">Đăng kí ngay</a></p>
+				<p>Bạn chưa có tài khoản học sinh ? <a href="student-signup">Đăng kí ngay</a></p>
 				
 			</div>
 		</div>

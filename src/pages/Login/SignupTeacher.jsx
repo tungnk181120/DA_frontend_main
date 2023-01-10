@@ -4,11 +4,6 @@ import React, { useContext } from 'react';
 // import { NotificationManager} from 'react-notifications';
 import './Login.scss'
 
-// import { useState } from 'react';
-// import { AuthContext } from '../../context/auth';
-// import { useMutation } from '@apollo/client'
-// import { teacherRegister } from '../../graphql-client/queries';
-// import { Link, useHistory } from 'react-router-dom';
 const api = 'http://localhost:5000/api/teacher'
 function SignupTeacher(props) {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
