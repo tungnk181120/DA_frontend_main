@@ -6,7 +6,7 @@ import './Login.scss'
  
 // const cookies = new Cookies();
 
-const api = 'http://localhost:5000/api/teacher'
+const api = 'http://d1o6v1g9gtdacj.cloudfront.net/api/teacher'
 function LoginTeacher(props) {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
     //const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
