@@ -55,7 +55,7 @@ function Class() {
                 <div>
                     <span className="title-test-outline">Danh sách lớp học</span>
                     <Button variant="contained" color="success" className="btn-create-test-outline" 
-                        component={Link} to="/class/create"
+                        component={Link} to="/classes/create"
                         onClick={() => {
                     }}>
                         Tạo lớp học

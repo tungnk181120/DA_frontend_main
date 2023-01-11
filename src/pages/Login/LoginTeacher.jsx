@@ -18,6 +18,8 @@ function LoginTeacher(props) {
 		  .then(function (response) {
 			console.log(response)
 			if (response.data['message'] == "Login thành công"){
+				// Set cookie .
+				document.cookie = "token=" + response.data['token'] + ";" + ";path=/";
 				// cookies.set(token, response.data['token']);
 				window.location.href = '/test-outline'
 			}

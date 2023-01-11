@@ -23,6 +23,7 @@ import QuestionEdit from './pages/Teacher/QuestionEdit';
 import Class from './pages/Teacher/Class';
 import ClassDetail from './pages/Teacher/ClassDetail';
 import ClassStudent from './pages/Teacher/ClassStudent';
+import ClassCreate from './pages/Teacher/ClassCreate';
 import TakerManager from './pages/Teacher/TakerManager';
 import TakerManagerDetail from './pages/Teacher/TakerManagerDetail';
 import TakerManagerStudent from './pages/Teacher/TakerManagerStudent';
@@ -58,6 +59,7 @@ function App() {
           <Route path='/questions/create' element={<QuestionCreate />} />
           <Route path='/questions/edit/:id' element={<QuestionEdit />} />
           <Route path='/classes' element={<Class />} />
+          <Route path='/classes/create' element={<ClassCreate />} />
           <Route path='/classes/detail/:id' element={<ClassDetail />} />
           <Route path='/classes/detail/students/:id' element={<ClassStudent />} />
           <Route path='/taker-manager' element={<TakerManager />} />

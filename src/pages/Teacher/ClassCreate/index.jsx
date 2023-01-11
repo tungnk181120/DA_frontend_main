@@ -1,76 +1,52 @@
 import { useForm } from "react-hook-form";
-import './TestOutlineCreate.scss'
 import Sider from "../../../components/Sider/Sider";
 import { Link as RouterLink, MemoryRouter } from 'react-router-dom';
 import { FaStepBackward } from "react-icons/fa";
 
-// import axios from 'redaxios';
+import axios from 'redaxios';
 const api = 'http://localhost:5000/api/teacher'
 
-function TestOutlineCreate() {
+function ClassCreate() {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        console.log(document.cookie)
-		// axios.post(api +'/test-outline', {
-            // test_outline_name : data.test_outline_name,
-            // test_outline_time : data.test_outline_time,
-            // subject : data.subject,
-            // topic1 : data.topic1,
-            // n_topic1 : data.n_topic1,
-            // topic2 : data.topic2,
-            // n_topic2 : data.n_topic2,
-		//   }, {
-        //     headers: {
-        //       'Content-Type': 'application/json'
-        //     }
-        //   },
-        //   { withCredentials: true }
-        // )
-        // .then(function (response) {
-        // console.log(response)
-        // if (response.message == "Login thành công"){
-        //     window.location.href = '/teacher-login'
-        // }
-        // })
-        // .catch(function (error) {
-        // console.log(error);
-        // });
-        fetch(api +'/test-outline', {
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: JSON.stringify({
-                test_outline_name : data.test_outline_name,
-                test_outline_time : data.test_outline_time,
-                subject : data.subject,
-                topic1 : data.topic1,
-                n_topic1 : data.n_topic1,
-                topic2 : data.topic2,
-                n_topic2 : data.n_topic2,
-            }),
-            credentials: 'include'
+		axios.post(api +'/test-outline', {
+            class_name : data.class_name,
+            test_outline_time : data.test_outline_time,
+            subject : data.subject,
+            topic1 : data.topic1,
+            n_topic1 : data.n_topic1,
+            topic2 : data.topic2,
+            n_topic2 : data.n_topic2,
+		  }, {
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          },
+            { withCredentials: true }
+        )
+        .then(function (response) {
+        console.log(response)
+        if (response.message == "Login thành công"){
+            window.location.href = '/teacher-login'
+        }
         })
-        .then((response) => response.json())
+        .catch(function (error) {
+        console.log(error);
+        });
     };
     return (
         <div className="test-outline-form-div">
-            <Sider test_outline='true'></Sider>
+            <Sider class='true'></Sider>
             <div className="test-outline-form-content">
                 <form onSubmit={handleSubmit(onSubmit)} className="test-outline-form">
-                    <RouterLink to='/test-outline'>
+                    <RouterLink to='/classes'>
                         <span className="back_icon" >
                             <FaStepBackward />
                         </span>  
                     </RouterLink>   
-                    <h2 className="test-outline-form-header">Tạo khung đề thi</h2>
-                    <label htmlFor="test_outline_name">Tên khung đề</label>
-                    <input placeholder="Tên khung đề" {...register("test_outline_name")} />
-
-                    <label htmlFor="test_outline_time">Thời gian thi</label>
-                    <input 
-                        placeholder="60"
-                        type="number"
-                        {...register("test_outline_time")}
-                    />
+                    <h2 className="test-outline-form-header">Tạo lớp học</h2>
+                    <label htmlFor="class_name">Tên lớp học</label>
+                    <input placeholder="Tên lớp học" {...register("class_name")} />
 
                     <label htmlFor="subject">Môn học</label>
                     <input
@@ -127,4 +103,4 @@ function TestOutlineCreate() {
     )
 }
 
-export default TestOutlineCreate;
+export default ClassCreate;
